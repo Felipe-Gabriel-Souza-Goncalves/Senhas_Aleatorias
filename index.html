@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senhas aleatórias</title>
+</head>
+<body>
+    <input type="range" min="4" max="10" id="passwordLength">
+    <button onclick="generatePassword()">Gerar senha aleatória</button>
+
+    <br><br>
+    <div >
+        <br><br>
+        <label for="">Números</label>
+        <input type="checkbox" class="caracteres" id="num">
+        <br><br>
+        <label for="">Letras minúsculas</label>
+        <input type="checkbox" class="caracteres" id="letraMin">
+        <br><br>
+        <label for="">Letras maiúsculas</label>
+        <input type="checkbox" class="caracteres" id="letraMai">
+        <br><br>
+        <label for="">Caracteres especiais</label>
+        <input type="checkbox" class="caracteres" id="caracEspec">
+    </div>
+    <div>
+        <p id="senha"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
