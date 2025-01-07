@@ -6,6 +6,8 @@ const arrayDeArrays = [numeros, letrasMin, letrasMai, caracEspecial]
 
 
 function generatePassword(){
+    senhaPersonalizada = []
+
     var passLength = parseInt(document.getElementById("passwordLength").value)
     var caracteresPermitidos = []
     var senhaCriada = "";
@@ -31,4 +33,58 @@ function generatePassword(){
 
     }
     document.getElementById("senha").innerHTML = senhaCriada
+}
+
+var senhaPersonalizada = []
+function customPasswordFormat(tipo){
+    var titulo;
+    switch(tipo){
+        case "numero":
+            senhaPersonalizada.push(numeros)
+            titulo = "Número"
+            break;
+        case "letra min":
+            senhaPersonalizada.push(letrasMin)
+            titulo = "Letra Minúscula"
+            break;
+        case "letra mai":
+            senhaPersonalizada.push(letrasMai)
+            titulo = "Letra Maiúscula"
+            break;
+        case "carac espec":
+            senhaPersonalizada.push(caracEspecial)
+            titulo = "Caracter especial"
+            break;
+    }
+    var caractere = document.createElement("span")
+    caractere.innerHTML = titulo
+    caractere.style.font = "10px Arial, bold"
+    caractere.style.border = "1px solid black"
+    caractere.style.padding = "3px"
+    caractere.style.margin = "10px 5px"
+    // caractere.setAttribute("onclick", "removeCharacter(this)")
+    caractere.setAttribute("class", `botaoN`)
+    
+    document.getElementById("areaPersonalizada").appendChild(caractere)
+}
+
+function generateCustomPassword(){
+    senhaCriada = ""
+    for(let i =0; i<senhaPersonalizada.length; i++){
+        var index = Math.floor(Math.random()*senhaPersonalizada[i].length)
+        senhaCriada += (senhaPersonalizada[i])[index]
+    }
+    document.getElementById("senha").innerHTML = senhaCriada
+
+}
+
+function removeCharacter(){
+    senhaPersonalizada = []
+    caractere = document.querySelectorAll(".botaoN")
+    for(let i =caractere.length -1; i>=0 ; i--){
+        caractere[i].remove()
+    }
+    senhaCriada = ""
+    document.getElementById("senha").innerHTML = senhaCriada
+
 }

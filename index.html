@@ -4,25 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Senhas aleatórias</title>
+
+    <style>
+        .personalizado{
+            font-size: 0.8em;
+        }
+    </style>
 </head>
 <body>
-    <input type="range" min="4" max="10" id="passwordLength">
+    <input type="range" min="4" max="10" id="passwordLength" list="tamanho">
+    <datalist id="tamanho">
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </datalist>
     <button onclick="generatePassword()">Gerar senha aleatória</button>
 
+
     <br><br>
-    <div >
+    <div>
         <br><br>
-        <label for="">Números</label>
+        <label>Números</label>
         <input type="checkbox" class="caracteres" id="num">
         <br><br>
-        <label for="">Letras minúsculas</label>
+        <label>Letras minúsculas</label>
         <input type="checkbox" class="caracteres" id="letraMin">
         <br><br>
-        <label for="">Letras maiúsculas</label>
+        <label>Letras maiúsculas</label>
         <input type="checkbox" class="caracteres" id="letraMai">
         <br><br>
-        <label for="">Caracteres especiais</label>
+        <label>Caracteres especiais</label>
         <input type="checkbox" class="caracteres" id="caracEspec">
+    </div>
+    <div>
+        <button id="personalizado">Personalizado</button>
+        <div class="btnEscolhas">
+            <button class="botoesPersonalizados" onclick="customPasswordFormat('numero')">Números</button>
+            <button class="botoesPersonalizados" onclick="customPasswordFormat('letra min')">Letras min</button>
+            <button class="botoesPersonalizados" onclick="customPasswordFormat('letra mai')">Letras mai</button>
+            <button class="botoesPersonalizados" onclick="customPasswordFormat('carac espec')">Carac especial</button>
+            
+            <button onclick="generateCustomPassword()">Gerar personalizado</button>
+            <button onclick="removeCharacter()">Limpar</button>
+        </div>
+        <div id="areaPersonalizada">
+
+        </div>
     </div>
     <div>
         <p id="senha"></p>
