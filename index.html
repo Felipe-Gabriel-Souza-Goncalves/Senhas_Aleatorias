@@ -6,8 +6,25 @@
     <title>Senhas aleatórias</title>
 
     <style>
-        .personalizado{
+        body{
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+        #senha{
+            height: 20px;
+        }
+        #personalizado{
             font-size: 0.8em;
+            margin: 10px 0px;
+        }
+        .btnEscolhas{
+            display: none;
+            justify-content: center;
+            margin: 10px 0px;   
+        }
+        #senhaPersonalizada{
+            height: 20px;
         }
     </style>
 </head>
@@ -23,14 +40,15 @@
         <option value="10">10</option>
     </datalist>
     <button onclick="generatePassword()">Gerar senha aleatória</button>
+    <button onclick="copyToClipboard('senhaAleatoria')">Copiar</button>
 
-
-    <br><br>
     <div>
-        <br><br>
+        <p id="senha"></p>
+    </div>
+    <div id="opcoesValidas">
         <label>Números</label>
         <input type="checkbox" class="caracteres" id="num">
-        <br><br>
+        <br><br> 
         <label>Letras minúsculas</label>
         <input type="checkbox" class="caracteres" id="letraMin">
         <br><br>
@@ -40,23 +58,21 @@
         <label>Caracteres especiais</label>
         <input type="checkbox" class="caracteres" id="caracEspec">
     </div>
+    <button id="personalizado" onclick="toggleCustom()">Personalizado</button>
     <div>
-        <button id="personalizado">Personalizado</button>
-        <div class="btnEscolhas">
+        <div class="btnEscolhas" id="btnEscolhas">
             <button class="botoesPersonalizados" onclick="customPasswordFormat('numero')">Números</button>
             <button class="botoesPersonalizados" onclick="customPasswordFormat('letra min')">Letras min</button>
             <button class="botoesPersonalizados" onclick="customPasswordFormat('letra mai')">Letras mai</button>
-            <button class="botoesPersonalizados" onclick="customPasswordFormat('carac espec')">Carac especial</button>
-            
+            <button class="botoesPersonalizados" onclick="customPasswordFormat('carac espec')">Carac especial</button>  
             <button onclick="generateCustomPassword()">Gerar personalizado</button>
             <button onclick="removeCharacter()">Limpar</button>
-        </div>
-        <div id="areaPersonalizada">
+            <button onclick="copyToClipboard('senhaPersonalizada')">Copiar</button>
 
         </div>
-    </div>
-    <div>
-        <p id="senha"></p>
+        <div id="areaPersonalizada">
+            <p id="senhaPersonalizada"></p>
+        </div>
     </div>
 
     <script src="script.js"></script>

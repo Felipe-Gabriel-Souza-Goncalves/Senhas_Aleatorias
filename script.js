@@ -62,7 +62,6 @@ function customPasswordFormat(tipo){
     caractere.style.border = "1px solid black"
     caractere.style.padding = "3px"
     caractere.style.margin = "10px 5px"
-    // caractere.setAttribute("onclick", "removeCharacter(this)")
     caractere.setAttribute("class", `botaoN`)
     
     document.getElementById("areaPersonalizada").appendChild(caractere)
@@ -74,7 +73,7 @@ function generateCustomPassword(){
         var index = Math.floor(Math.random()*senhaPersonalizada[i].length)
         senhaCriada += (senhaPersonalizada[i])[index]
     }
-    document.getElementById("senha").innerHTML = senhaCriada
+    document.getElementById("senhaPersonalizada").innerHTML = senhaCriada
 
 }
 
@@ -85,6 +84,37 @@ function removeCharacter(){
         caractere[i].remove()
     }
     senhaCriada = ""
-    document.getElementById("senha").innerHTML = senhaCriada
+    document.getElementById("senhaPersonalizada").innerHTML = senhaCriada
 
+}
+
+var ativo = false
+function toggleCustom(){
+    ativo = !ativo
+    if(ativo){
+        document.getElementById("btnEscolhas").style.display = "flex"
+        document.getElementById("areaPersonalizada").style.display = "block"
+        document.getElementById("opcoesValidas").style.display = "none"
+    } else{
+        document.getElementById("btnEscolhas").style.display = "none"
+        document.getElementById("areaPersonalizada").style.display = "none"
+        document.getElementById("opcoesValidas").style.display = "block"
+
+    }
+}
+
+function copyToClipboard(tipo){
+    aleatorio = document.getElementById("senha").innerHTML
+    personalizado = document.getElementById("senhaPersonalizada").innerHTML
+    texto = "";
+    if(aleatorio != "" && tipo == "senhaAleatoria"){
+        texto = aleatorio
+    } else if(personalizado != "" && tipo == "senhaPersonalizada"){
+        texto = personalizado
+    } else{
+        return
+    }
+
+    navigator.clipboard.writeText(texto)
+    alert("Copiado para a área de transferencia")
 }
