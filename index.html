@@ -5,46 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Senhas aleatórias</title>
 
+    <link rel="stylesheet" href="style.css">
     <style>
-        body{
-            text-align: center;
-            font-family: Arial, Helvetica, sans-serif;
 
-        }
-        #senha{
-            height: 20px;
-        }
-        #personalizado{
-            font-size: 0.8em;
-            margin: 10px 0px;
-        }
-        .btnEscolhas{
-            display: none;
-            justify-content: center;
-            margin: 10px 0px;   
-        }
-        #senhaPersonalizada{
-            height: 20px;
-        }
     </style>
 </head>
 <body>
-    <input type="range" min="4" max="10" id="passwordLength" list="tamanho">
+    <h2>Número de caracteres da senha</h2>
+    <h4 id="numCarac">4 caracteres</h4>
+    <input type="range" min="4" max="10" value="4" id="passwordLength" list="tamanho" oninput="updateCarac()">
     <datalist id="tamanho">
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
+        <option value="4"></option>
+        <option value="5"></option>
+        <option value="6"></option>
+        <option value="7"></option>
+        <option value="8"></option>
+        <option value="9"></option>
+        <option value="10"></option>
     </datalist>
+    <br><br>
     <button onclick="generatePassword()">Gerar senha aleatória</button>
     <button onclick="copyToClipboard('senhaAleatoria')">Copiar</button>
 
+    <br><br>
     <div>
-        <p id="senha"></p>
+        <p id="senha">A senha vai aparecer aqui quando gerar...</p>
     </div>
+    <br>
+    <button id="personalizado" onclick="toggleCustom()">Personalizado</button>
+
     <div id="opcoesValidas">
         <label>Números</label>
         <input type="checkbox" class="caracteres" id="num">
@@ -58,20 +47,24 @@
         <label>Caracteres especiais</label>
         <input type="checkbox" class="caracteres" id="caracEspec">
     </div>
-    <button id="personalizado" onclick="toggleCustom()">Personalizado</button>
     <div>
         <div class="btnEscolhas" id="btnEscolhas">
-            <button class="botoesPersonalizados" onclick="customPasswordFormat('numero')">Números</button>
-            <button class="botoesPersonalizados" onclick="customPasswordFormat('letra min')">Letras min</button>
-            <button class="botoesPersonalizados" onclick="customPasswordFormat('letra mai')">Letras mai</button>
-            <button class="botoesPersonalizados" onclick="customPasswordFormat('carac espec')">Carac especial</button>  
-            <button onclick="generateCustomPassword()">Gerar personalizado</button>
-            <button onclick="removeCharacter()">Limpar</button>
-            <button onclick="copyToClipboard('senhaPersonalizada')">Copiar</button>
+            <div id="gridOption">
+                <button class="botoesPersonalizados" onclick="customPasswordFormat('numero')">Números</button>
+                <button class="botoesPersonalizados" onclick="customPasswordFormat('letra min')">Letras min</button>
+                <button class="botoesPersonalizados" onclick="customPasswordFormat('letra mai')">Letras mai</button>
+                <button class="botoesPersonalizados" onclick="customPasswordFormat('carac espec')">Carac especial</button>
+            </div>
+            <div id="actionOption">
+                <button onclick="generateCustomPassword()">Gerar personalizado</button>
+                <button onclick="removeCharacter()">Limpar</button>
+                <button onclick="copyToClipboard('senhaAleatoria')">Copiar</button>
+            </div>
 
         </div>
         <div id="areaPersonalizada">
-            <p id="senhaPersonalizada"></p>
+            <br><br>
+            <span>&nbsp;</span>
         </div>
     </div>
 

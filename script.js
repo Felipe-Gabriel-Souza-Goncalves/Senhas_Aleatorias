@@ -5,6 +5,10 @@ const caracEspecial = ["!","#","&","*","-","_","$","%"]
 const arrayDeArrays = [numeros, letrasMin, letrasMai, caracEspecial]
 
 
+function updateCarac(){
+    document.getElementById('numCarac').innerText = document.getElementById('passwordLength').value + ' caracteres'
+}
+
 function generatePassword(){
     senhaPersonalizada = []
 
@@ -19,6 +23,8 @@ function generatePassword(){
         }
     }
     if(caracteresPermitidos.length == 0){
+        document.getElementById("senha").innerHTML = "Selecione as caixas de caracteres desejados!"
+        document.getElementById("senha").style.color = "lightcoral"
         return
     }
 
@@ -33,6 +39,8 @@ function generatePassword(){
 
     }
     document.getElementById("senha").innerHTML = senhaCriada
+    document.getElementById("senha").style.color = "black"
+    document.getElementById("senha").style.fontStyle = "normal"
 }
 
 var senhaPersonalizada = []
@@ -58,11 +66,7 @@ function customPasswordFormat(tipo){
     }
     var caractere = document.createElement("span")
     caractere.innerHTML = titulo
-    caractere.style.font = "10px Arial, bold"
-    caractere.style.border = "1px solid black"
-    caractere.style.padding = "3px"
-    caractere.style.margin = "10px 5px"
-    caractere.setAttribute("class", `botaoN`)
+    caractere.classList.add(`botaoN`)
     
     document.getElementById("areaPersonalizada").appendChild(caractere)
 }
@@ -73,8 +77,9 @@ function generateCustomPassword(){
         var index = Math.floor(Math.random()*senhaPersonalizada[i].length)
         senhaCriada += (senhaPersonalizada[i])[index]
     }
-    document.getElementById("senhaPersonalizada").innerHTML = senhaCriada
-
+    document.getElementById("senha").innerHTML = senhaCriada
+    document.getElementById("senha").style.color = "black"
+    document.getElementById("senha").style.fontStyle = "normal"
 }
 
 function removeCharacter(){
@@ -104,10 +109,10 @@ function toggleCustom(){
 }
 
 function copyToClipboard(tipo){
-    aleatorio = document.getElementById("senha").innerHTML
-    personalizado = document.getElementById("senhaPersonalizada").innerHTML
-    texto = "";
-    if(aleatorio != "" && tipo == "senhaAleatoria"){
+    const aleatorio = document.getElementById("senha").innerHTML
+    // const personalizado = document.getElementById("senhaPersonalizada").innerHTML
+    let texto = "";
+    if(aleatorio != "Selecione as caixas de caracteres desejados!" && tipo == "senhaAleatoria"){
         texto = aleatorio
     } else if(personalizado != "" && tipo == "senhaPersonalizada"){
         texto = personalizado
