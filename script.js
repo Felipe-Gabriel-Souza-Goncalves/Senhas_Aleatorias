@@ -98,7 +98,7 @@ function toggleCustom(){
     ativo = !ativo
     if(ativo){
         document.getElementById("btnEscolhas").style.display = "flex"
-        document.getElementById("areaPersonalizada").style.display = "block"
+        document.getElementById("areaPersonalizada").style.display = "flex"
         document.getElementById("opcoesValidas").style.display = "none"
     } else{
         document.getElementById("btnEscolhas").style.display = "none"

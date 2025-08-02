@@ -5,60 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Senhas aleatórias</title>
 
+    <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <style>
 
-    </style>
 </head>
 <body>
-    <h2>Número de caracteres da senha</h2>
+    <h2>Número de caracteres da senha 🔒</h2>
     <h4 id="numCarac">4 caracteres</h4>
     <input type="range" min="4" max="10" value="4" id="passwordLength" list="tamanho" oninput="updateCarac()">
     <datalist id="tamanho">
-        <option value="4"></option>
-        <option value="5"></option>
-        <option value="6"></option>
-        <option value="7"></option>
-        <option value="8"></option>
-        <option value="9"></option>
-        <option value="10"></option>
+        <option value="4" label="4"></option>
+        <option value="5" label="5"></option>
+        <option value="6" label="6"></option>
+        <option value="7" label="7"></option>
+        <option value="8" label="8"></option>
+        <option value="9" label="9"></option>
+        <option value="10" label="10"></option>
     </datalist>
     <br><br>
-    <button onclick="generatePassword()">Gerar senha aleatória</button>
-    <button onclick="copyToClipboard('senhaAleatoria')">Copiar</button>
+    <button class="blueButton" onclick="generatePassword()">Gerar senha aleatória</button>
+    <button class="blueButton" onclick="copyToClipboard('senhaAleatoria')">Copiar</button>
 
     <br><br>
     <div>
         <p id="senha">A senha vai aparecer aqui quando gerar...</p>
     </div>
     <br>
-    <button id="personalizado" onclick="toggleCustom()">Personalizado</button>
+    <button class="blueButton" id="personalizado" onclick="toggleCustom()">Personalizado</button>
 
     <div id="opcoesValidas">
-        <label>Números</label>
-        <input type="checkbox" class="caracteres" id="num">
-        <br><br> 
-        <label>Letras minúsculas</label>
-        <input type="checkbox" class="caracteres" id="letraMin">
-        <br><br>
-        <label>Letras maiúsculas</label>
-        <input type="checkbox" class="caracteres" id="letraMai">
-        <br><br>
-        <label>Caracteres especiais</label>
-        <input type="checkbox" class="caracteres" id="caracEspec">
+        <div>
+          <label>Números</label>
+          <input type="checkbox" class="caracteres" id="num">
+        </div>
+        <br> 
+        <div>
+          <label>Letras minúsculas</label>
+          <input type="checkbox" class="caracteres" id="letraMin">
+        </div>
+        <br>
+        <div>
+          <label>Letras maiúsculas</label>
+          <input type="checkbox" class="caracteres" id="letraMai">
+        </div>
+        <br>
+        <div>
+          <label>Caracteres especiais</label>
+          <input type="checkbox" class="caracteres" id="caracEspec">
+        </div>
     </div>
     <div>
         <div class="btnEscolhas" id="btnEscolhas">
             <div id="gridOption">
-                <button class="botoesPersonalizados" onclick="customPasswordFormat('numero')">Números</button>
-                <button class="botoesPersonalizados" onclick="customPasswordFormat('letra min')">Letras min</button>
-                <button class="botoesPersonalizados" onclick="customPasswordFormat('letra mai')">Letras mai</button>
-                <button class="botoesPersonalizados" onclick="customPasswordFormat('carac espec')">Carac especial</button>
+                <button class="botoesPersonalizados greenButton" onclick="customPasswordFormat('numero')">Números</button>
+                <button class="botoesPersonalizados greenButton" onclick="customPasswordFormat('letra min')">Letras min</button>
+                <button class="botoesPersonalizados greenButton" onclick="customPasswordFormat('letra mai')">Letras mai</button>
+                <button class="botoesPersonalizados greenButton" onclick="customPasswordFormat('carac espec')">Carac especial</button>
             </div>
             <div id="actionOption">
-                <button onclick="generateCustomPassword()">Gerar personalizado</button>
-                <button onclick="removeCharacter()">Limpar</button>
-                <button onclick="copyToClipboard('senhaAleatoria')">Copiar</button>
+                <button class="blueButton" onclick="generateCustomPassword()">Gerar personalizado</button>
+                <button class="blueButton" onclick="removeCharacter()">Limpar</button>
+                <button class="blueButton" onclick="copyToClipboard('senhaAleatoria')">Copiar</button>
             </div>
 
         </div>
@@ -67,6 +74,7 @@
             <span>&nbsp;</span>
         </div>
     </div>
+
 
     <script src="script.js"></script>
 </body>

@@ -1,7 +1,7 @@
 # 🔑 Senhas aleatórias
 
 ## ✏️ Descrição
-Projeto para experimentar com combinações de caracteres
+Projeto para experimentar com geração de combinações de caracteres
 
 ## 🔧 Funcionalidades
 - Alterar tamanho da senha a ser gerada
