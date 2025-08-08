@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Senhas aleatórias</title>
 
-    <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Senhas aleatórias</title>
+
+  <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
+  <link rel="stylesheet" href="css/geral.css">
+  <link rel="stylesheet" href="css/style.css">
 
 </head>
+
 <body>
+  <header>
+    <h1>Gerador de senhas</h1>
+    <a href="index.html">Gerador de senhas</a>
+    <a href="testarSenha.html">Testar senha</a>
+  </header>
+
+  <main>
     <h2>Número de caracteres da senha 🔒</h2>
     <h4 id="numCarac">4 caracteres</h4>
-    <input type="range" min="4" max="10" value="4" id="passwordLength" list="tamanho" oninput="updateCarac()">
+    <input type="range" min="4" max="12" value="4" id="passwordLength" list="tamanho" oninput="updateCarac()">
     <datalist id="tamanho">
-        <option value="4" label="4"></option>
-        <option value="5" label="5"></option>
-        <option value="6" label="6"></option>
-        <option value="7" label="7"></option>
-        <option value="8" label="8"></option>
-        <option value="9" label="9"></option>
-        <option value="10" label="10"></option>
+      <option value="4" label="4"></option>
+      <option value="6" label="6"></option>
+      <option value="8" label="8"></option>
+      <option value="10" label="10"></option>
+      <option value="12" label="12"></option>
     </datalist>
     <br><br>
     <button class="blueButton" onclick="generatePassword()">Gerar senha aleatória</button>
@@ -28,54 +36,60 @@
 
     <br><br>
     <div>
-        <p id="senha">A senha vai aparecer aqui quando gerar...</p>
+      <p id="senha">A senha vai aparecer aqui quando gerar...</p>
     </div>
     <br>
     <button class="blueButton" id="personalizado" onclick="toggleCustom()">Personalizado</button>
 
     <div id="opcoesValidas">
-        <div>
-          <label>Números</label>
-          <input type="checkbox" class="caracteres" id="num">
-        </div>
-        <br> 
-        <div>
-          <label>Letras minúsculas</label>
-          <input type="checkbox" class="caracteres" id="letraMin">
-        </div>
-        <br>
-        <div>
-          <label>Letras maiúsculas</label>
-          <input type="checkbox" class="caracteres" id="letraMai">
-        </div>
-        <br>
-        <div>
-          <label>Caracteres especiais</label>
-          <input type="checkbox" class="caracteres" id="caracEspec">
-        </div>
+      <div>
+        <label>Números</label>
+        <input type="checkbox" class="caracteres" id="num">
+      </div>
+      <br>
+      <div>
+        <label>Letras minúsculas</label>
+        <input type="checkbox" class="caracteres" id="letraMin">
+      </div>
+      <br>
+      <div>
+        <label>Letras maiúsculas</label>
+        <input type="checkbox" class="caracteres" id="letraMai">
+      </div>
+      <br>
+      <div>
+        <label>Caracteres especiais</label>
+        <input type="checkbox" class="caracteres" id="caracEspec">
+      </div>
     </div>
     <div>
-        <div class="btnEscolhas" id="btnEscolhas">
-            <div id="gridOption">
-                <button class="botoesPersonalizados greenButton" onclick="customPasswordFormat('numero')">Números</button>
-                <button class="botoesPersonalizados greenButton" onclick="customPasswordFormat('letra min')">Letras min</button>
-                <button class="botoesPersonalizados greenButton" onclick="customPasswordFormat('letra mai')">Letras mai</button>
-                <button class="botoesPersonalizados greenButton" onclick="customPasswordFormat('carac espec')">Carac especial</button>
-            </div>
-            <div id="actionOption">
-                <button class="blueButton" onclick="generateCustomPassword()">Gerar personalizado</button>
-                <button class="blueButton" onclick="removeCharacter()">Limpar</button>
-                <button class="blueButton" onclick="copyToClipboard('senhaAleatoria')">Copiar</button>
-            </div>
+      <div class="btnEscolhas" id="btnEscolhas">
+        <div id="gridOption">
+          <button class="botoesPersonalizados greenButton" onclick="customPasswordFormat('numero')">Números</button>
+          <button class="botoesPersonalizados greenButton" onclick="customPasswordFormat('letra min')">Letras
+            min</button>
+          <button class="botoesPersonalizados greenButton" onclick="customPasswordFormat('letra mai')">Letras
+            mai</button>
+          <button class="botoesPersonalizados greenButton" onclick="customPasswordFormat('carac espec')">Carac
+            especial</button>
+        </div>
+        <div id="actionOption">
+          <button class="blueButton" onclick="generateCustomPassword()">Gerar personalizado</button>
+          <button class="blueButton" onclick="removeCharacter()">Limpar</button>
+          <button class="blueButton" onclick="copyToClipboard('senhaAleatoria')">Copiar</button>
+        </div>
 
-        </div>
-        <div id="areaPersonalizada">
-            <br><br>
-            <span>&nbsp;</span>
-        </div>
+      </div>
+      <div id="areaPersonalizada">
+        <br><br>
+        <span>&nbsp;</span>
+      </div>
     </div>
 
+  </main>
 
-    <script src="script.js"></script>
+  <script src="js/geral.js"></script>
+  <script src="js/script.js"></script>
 </body>
+
 </html>

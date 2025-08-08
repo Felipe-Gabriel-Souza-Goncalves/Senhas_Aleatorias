@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teste da senha</title>
+
+  <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
+  <link rel="stylesheet" href="css/geral.css">
+  <link rel="stylesheet" href="css/testarSenha.css">
+
+</head>
+<body>
+  <header>
+      <h1>Teste de senha</h1>
+      <a href="index.html">Gerador de senhas</a>
+      <a href="testarSenha.html">Testar senha</a>
+
+  </header>
+
+  <main>
+    <br><br>
+    <div id="container">
+      <div>
+        <input type="password" id="password" placeholder="Insira a senha aqui">
+        <img id="eye_password" width="50" src="images/eye_closed.svg" alt="olho" onclick="togglePasswordVisibility()">
+      </div>
+
+      <div class="aviso">
+        <div class="iconAviso"></div>
+        <p>Há números</p>
+      </div>
+      <div class="aviso">
+        <div class="iconAviso"></div>
+        <p>Há letras minusculas</p>
+      </div>
+      <div class="aviso">
+        <div class="iconAviso"></div>
+        <p>Há letras maiusculas</p>
+      </div>
+      <div class="aviso">
+        <div class="iconAviso"></div>
+        <p>Há caracteres especiais</p>
+      </div>
+      <div class="aviso">
+        <div class="iconAviso"></div>
+        <p>Há ao menos 8 caracteres</p>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script src="js/geral.js"></script>
+  <script src="js/testarSenha.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+#container{
+  width: 500px;
+  max-width: 90%;
+  border: 0;
+  border-radius: 15px;
+  font-size: 30px;
+  margin: 0 auto;
+}
+
+div > div:has(#password){
+  width: 470px;
+  height: 80px;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid darkgray;
+  border-radius: 12px;
+  display: flex;
+  box-sizing: border-box;
+  padding: 8px;
+  justify-content: space-between;
+  margin: 16px;
+}
+#password{
+  width: 92%;
+  border: 0;
+  background-color: transparent;
+  border-bottom: 4px solid transparent;
+  outline: none;
+  font-size: 28px;
+}
+#password:focus{
+  border-color: black; 
+}
+#password::placeholder{
+  font-style: italic;
+  color: rgb(167, 167, 167);
+}
+
+.aviso{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-size: 22px;
+  background-color: rgb(243, 179, 170);
+  color: darkred;
+  border-radius: 18px;
+  box-sizing: border-box;
+  width: 400px;
+  height: 50px;
+  transition: 0.5s ease-out;
+  margin: 8px 48px;
+  padding: 8px 16px;
+}
+.aviso p{
+  margin: 0;
+}
+
+.aviso div{
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.aviso:not(.ativo) .iconAviso{
+  background-image: url(../images/close.svg);
+}
+
+.ativo{
+  color: green;
+  background-color: lightgreen;
+}
+
+.ativo .iconAviso{
+  background-image: url(../images/check.svg);
+}

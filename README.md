@@ -7,6 +7,7 @@ Projeto para experimentar com geração de combinações de caracteres
 - Alterar tamanho da senha a ser gerada
 - Alterar quais tipos de caracteres a serem gerados
 - Selecionar a ordem dos tipos de caracteres a serem gerados 
+- Testar se a senha possui determinados critérios
 
 ## 🌐 Link do projeto
 https://felipe-gabriel-souza-goncalves.github.io/Senhas_Aleatorias/

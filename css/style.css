@@ -1,0 +1,144 @@
+
+#passwordLength{
+    min-width: 275px;
+    width: 400px;
+    max-width: 90%;
+}
+
+#senha{
+    color: gray;
+    font-style: italic;
+    height: 20px;
+}
+.inputInvalido{
+    color: lightcoral;
+}
+#personalizado{
+    font-size: 18px;
+    width: 300px;
+    max-width: 90%;
+    margin: 10px 0px;
+}
+.btnEscolhas{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 450px;
+    max-width: 95%;
+}
+.btnEscolhas button{
+    padding: 5px 0px;
+}
+#senhaPersonalizada{
+    height: 20px;
+}
+#areaPersonalizada{
+    margin: 20px auto 80px;
+    width: 800px;
+    max-width: 90%;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.botaoN{
+    font: 10px Arial, bold;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: lightgrey;
+    padding: 3px;
+    margin: 0;
+    font-size: 1em;
+    height: -webkit-fill-available;
+    align-content: center;
+    width: 80px;
+}
+
+#gridOption{
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(2, minmax(100px, 200px));
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    margin: 20px 0px;
+    max-width: 100vw;
+}
+
+
+.blueButton{
+    padding: 10px 15px;
+    font-size: 24px;
+    border: 3px solid rgb(132, 219, 217);
+    border-radius: 10px;
+    background-color: rgb(107, 197, 245);
+    color: white;
+    box-shadow: 0px 4px 4px rgba(40, 62, 187, 0.671);
+    cursor: pointer;
+    transition: .2s;
+    margin: 5px 0px;
+}
+.blueButton:hover{
+    background-color: rgb(123, 222, 255);
+    border-color: transparent;
+}
+
+.blueButton:active{
+    background-color: rgb(84, 162, 226);
+    border-color: transparent;
+}
+
+
+/* ----------------- */
+.greenButton{
+    padding: 10px 0px;
+    font-size: 24px;
+    border: 3px solid rgb(126, 252, 126);
+    border-radius: 20px;
+    background-color: rgb(77, 239, 77);
+    color: white;
+    box-shadow: 0px 4px 4px rgba(27, 177, 27, 0.671);
+    cursor: pointer;
+    transition: .2s;
+}
+
+.greenButton:hover{
+    background-color: rgb(90, 255, 90);
+    border-color: transparent;
+}
+
+.greenButton:active{
+    background-color: rgb(64, 222, 64);
+    border-color: transparent;
+}
+
+    
+#actionOption{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+    max-width: 90%;
+}
+    #actionOption button{
+        width: 100%;
+        font-size: 18px;
+        font-weight: 400;
+        padding: 15px;
+    }
+
+@media (max-width: 800px) {
+    #actionOption{
+        flex-wrap: wrap;
+    }
+    #gridOption{
+        gap: 0;
+        border-collapse: collapse;
+    }
+    .greenButton{
+        font-size: 18px;
+        border-radius: 0;
+        box-shadow: 0px 0px 0px transparent;
+    }
+}
